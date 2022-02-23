@@ -24,25 +24,25 @@
         <!--Controls area div-->
         <div class="controls-area">
             <!--Buttons - Plus Minus Times Divide-->
-            <button class="btn btn--big btn--green"><i class="fas fa-plus"></i></button>
-            <button class="btn btn--big btn--blue"><i class="fas fa-minus"></i></button>
-            <button class="btn btn--big btn--orange"><i class="fas fa-times"></i></button>
-            <button class="btn btn--big btn--red"><i class="fas fa-divide"></i></button>
+            <button data-type="add" class="btn btn--big btn--green"><i class="fas fa-plus"></i></button>
+            <button data-type="subtract" class="btn btn--big btn--blue"><i class="fas fa-minus"></i></button>
+            <button data-type="divide" class="btn btn--big btn--orange"><i class="fas fa-times"></i></button>
+            <button data-type="multiply" class="btn btn--big btn--red"><i class="fas fa-divide"></i></button>
         </div>
+    
+        <!--Question area div-->
+        <div class="question-area">
+            <!--Spans for the parts of the operation-->
+            <span id="operand1">0</span>
+            <span id="operator">X</span>
+            <span id="operand2">0</span>
+            <span>=</span>
+            <span><input id="answer-box" type="number"></span>
+            <p class="answer-message">Enter Answer:</p>
+        </div>
+        <button data-type="submit" class="btn btn--gray">Submit Answer</button>
     </div>
     
-    <!--Question area div-->
-    <div class="question-area">
-        <!--Spans for the parts of the operation-->
-        <span id="operand1">0</span>
-        <span id="operator">X</span>
-        <span id="operand2">0</span>
-        <span>=</span>
-        <span><input id="answer-box" type="number"></span>
-        <p class="answer-message">Enter Answer:</p>
-    </div>
-    <button class="btn btn--gray">Submit Answer</button>
-
     <!--Score area div-->
     <div class="score-area">
         <p class="scores">Correct Answers <span id="score">0</span></p>
