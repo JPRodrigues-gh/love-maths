@@ -46,6 +46,7 @@ function checkAnswer() {
 
     if (isCorrect) {
         alert("Hey, you got it right! :D");
+        incrementScore();
     } else {
         alert(`Awwww.... you answered ${userAnswer}. The correct answer is ${calculatedAnswer[0]}!`);
     }
@@ -71,11 +72,15 @@ function calculateCorrectAnswer() {
 }
 
 function incrementScore() {
-
+    let score = parseInt(document.getElementById('score').innerText);
+    score ++;
+    document.getElementById('score').innerText = score;
 }
 
 function incrementWrongAnswer() {
-
+    let score = parseInt(document.getElementById('incorrect').innerText);
+    score ++;
+    document.getElementById('incorrect').innerText = score;
 }
 
 function displayAddQuestion(operand1, operand2) {
