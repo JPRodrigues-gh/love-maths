@@ -14,6 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
+
+    //Event listener to catch keydown after user enters an answer in answer-box
+    document.getElementById('answer-box').addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    })
+
     //Hard code call to runGame with addition parameter
     runGame("add");
 })  
@@ -23,6 +31,11 @@ document.addEventListener("DOMContentLoaded", function() {
  * and after the user's answer has been processed
  */
 function runGame(gameType) {
+    //Clear answer field at start of each new game
+    document.getElementById('answer-box').value = '';
+    //Ensure the answer field gets focus for the user
+    document.getElementById('answer-box').focus();
+
     //Create two random numbers betweem 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
@@ -104,26 +117,22 @@ function displayAddQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = '+';
-    document.getElementById('answer-box').value = '';
 }
 
 function displaySubtractQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
     document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = '-';
-    document.getElementById('answer-box').value = '';
 }
 
 function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = 'x';
-    document.getElementById('answer-box').value = '';
 }
 
 function displayDivideQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = '÷';
-    document.getElementById('answer-box').value = '';
 }
